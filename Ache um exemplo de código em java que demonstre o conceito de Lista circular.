@@ -1,0 +1,89 @@
+public class CircleList {  
+
+   private Node cursor;
+
+   private int size;
+
+     
+
+   public CircleList() {
+
+       cursor = null;
+
+       size = 0;
+
+   }
+
+   public int size() {
+
+       return size;
+
+   }
+
+     
+
+   public Node getCursor() {
+
+       return cursor;
+
+   }
+
+     
+
+   public void advance() {
+
+       cursor = cursor.getNext();
+
+   }
+
+     
+
+   public void add(Node v) {
+
+       if (cursor == null) {
+
+           v.setNext(v);
+
+           cursor = v;
+
+       } else {
+
+           v.setNext(cursor.getNext());
+
+           cursor.setNext(v);
+
+       }
+
+       size++;
+
+   }
+
+     
+
+   public Node remove() throws IllegalArgumentException {
+
+       if (cursor == null)
+
+           throw new IllegalArgumentException("lista vazia");      
+
+       Node aux = cursor.getNext();
+
+       if (aux == cursor)
+
+           cursor = null;
+
+       else {
+
+           cursor.setNext(aux.getNext());
+
+           aux.setNext(null);
+
+       }
+
+        size--;
+
+       return aux;
+
+   }
+
+}
