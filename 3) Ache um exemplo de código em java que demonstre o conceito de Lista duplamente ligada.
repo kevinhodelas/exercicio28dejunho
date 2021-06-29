@@ -1,0 +1,74 @@
+public class ListaDupEncadeada {
+ // A classe que representa os nós da lista utiliza a classe Object
+ para definir a referência ao dado associado à posição da lista que este nó representa.
+ private class No{
+       // Referência ao próximo elemento da lista
+       No proximo;
+       // Referência ao elemento anterior na lista
+       No anterior;
+       // Referência ao dado armazenado no nó atual da lista
+       Object dado;
+
+       // Constrói um nó para armazenar um objeto na lista
+       No(Object obj) { ... }
+       // Constrói um nó para armazenar um objeto na lista, indicando quais os
+       // nós anterior e próximo
+       No(Object obj, No prox, No ant) { ... }
+ }
+ // Implementação da interface Iterator, que define os métodos de navegação na lista
+ private class IteratorLista implements Iterator {
+       // Referência ao nó apontado pelo iterador da lista durante a navegação
+       No noAtual;
+
+       // Retorna o dado associado ao nó atual. Caso o iterador não seja válido
+       // (noAtual é nulo), retorna um objeto nulo
+       public Object dado() { ... }
+       // Coloca o iterador no próximo elemento da lista e retorna o dado
+       // associado ao nó atual. Caso o iterador não seja válido (noAtual é
+       // nulo), retorna um objeto nulo
+       public Object proximo() { ... }
+       // Coloca o iterador no elemento anterior da lista e retorna o dado
+       // associado ao nó atual. Caso o iterador não seja válido (noAtual é
+       // nulo), retorna um objeto nulo
+       public Object anterior() { ... }
+       // Verifica se existe um nó após o nó atual
+       public boolean temProximo() { ... }
+       // Verifica se existe um nó antes do nó atual
+       public boolean temAnterior() { ... }
+       // Verifica se o nó atual existe e é válido
+       public boolean eValido() { ... }
+ }
+
+ // Nó inicial (primeiro) da lista encadeada
+ No     inicio;
+ // Nó final (último) da lista encadeada
+ No     fim;
+ // Tamanho da lista encadeada (número de nós na lista)
+ int    tamanho;
+
+ // Construtor
+ public ListaDupEncadeada() { ... }
+ // Retorna uma instância de Iterator para o primeiro nó da lista
+ public Iterator iteradorInicio() { ... }
+ // Retorna uma instância de Iterator para o último nó da lista
+ public Iterator iteradorFim() { ... }
+ // Retorna o tamanho da lista
+ public int getTamanho() { ... }
+ // Insere um novo nó no início da lista
+ public int insereInicio(Object obj { ... }
+ // Insere um novo nó no final da lista
+ public int insereFim(Object obj { ... }
+ // Insere um novo nó na posição indicada
+ public int insere(Object obj, int pos) { ... }
+ // Remove o nó do início da lista - retira o primeiro elemento
+ // Retorna o objeto armazenado no primeiro nó da lista - que foi removido.
+ public Object removeInicio(){ ... }
+ // Remove o nó do final da lista - retira o último elemento
+ // Retorna o objeto do último nó da lista - que foi removido.
+ public Object removeFim(){ ... }
+ // Remove um nó do meio da lista - retira o elemento da posição indicada
+ // Retorna o objeto armazenado na posição indicada - que foi removida.
+ public Object remove(int pos) { ... }
+ // Retorna o objeto armazenado na posição indicada, sem remover o mesmo da lista
+ public Object consulta(int pos) { ... }
+}
